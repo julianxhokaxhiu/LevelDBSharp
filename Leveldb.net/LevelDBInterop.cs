@@ -10,25 +10,6 @@ namespace LevelDB
         [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Unicode)]
         private static extern IntPtr LoadLibrary(string lpFileName);
 
-        static LevelDBInterop()
-        {
-            // Pre loading native library is necessary only for .Net framework (.net standard load automatically from runtimes folder)
-#if!NET_STANDARD_20
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            { 
-                var dir = IntPtr.Size == 8 ? "x64" : "x86";
-                var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                var libPath = Path.Combine(Path.GetDirectoryName(assemblyLocation), dir, "leveldb.dll");
-                var dllHandle = LoadLibrary(libPath);
-
-            #if DEBUG
-                if (dllHandle == IntPtr.Zero)
-                    Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
-            #endif
-            }
-#endif
-        }
-
         #region Logger
         [DllImport("leveldb.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr leveldb_logger_create(IntPtr /* Action<string> */ logger);
@@ -64,7 +45,7 @@ namespace LevelDB
 
         [DllImport("leveldb.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr leveldb_get(IntPtr /* DB */ db, IntPtr /* ReadOptions*/ options, IntPtr key, IntPtr keylen, out IntPtr vallen, out IntPtr errptr);
-        
+
         //[DllImport("leveldb.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         //static extern void leveldb_approximate_sizes(IntPtr /* DB */ db, int num_ranges, byte[] range_start_key, long range_start_key_len, byte[] range_limit_key, long range_limit_key_len, out long sizes);
 
@@ -87,7 +68,7 @@ namespace LevelDB
         public static extern void leveldb_destroy_db(IntPtr /* Options*/ options, string name, out IntPtr error);
 
         #region extensions 
-        
+
         [DllImport("leveldb.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern void leveldb_free(IntPtr /* void */ ptr);
 
