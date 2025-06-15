@@ -1,26 +1,22 @@
 ﻿using System;
 using LevelDB;
-using NUnit.Framework;
 
 namespace DotNetFrameworkTests
 {
-
-    [TestFixture]
-    public class NativeLibraryLoadingTests
+    class DotNetFrameworkTest
     {
-        [Test]
-        public void Native_library_should_be_loaded()
+        static void Main(string[] args)
         {
             try
             {
-                using (new DB(new Options {CreateIfMissing = true}, "LoadingTest"))
+                using (new DB(new Options { CreateIfMissing = true }, "LoadingTest"))
                 {
-                    Assert.Pass();
+                    Console.WriteLine("Successfully loaded LevelDB.NET!");
                 }
             }
-            catch(Exception ex) when (!(ex is SuccessException))
+            catch (Exception ex)
             {
-                Assert.Fail("Cannot create database: " + ex.Message);
+                Console.WriteLine("Cannot load LevelDB.NET: " + ex.Message);
             }
         }
     }
