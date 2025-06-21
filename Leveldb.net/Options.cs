@@ -13,6 +13,8 @@ namespace LevelDB
         private Logger _InfoLog;
         public Options()
         {
+            LevelDbLoader.EnsureLoaded();
+
             this.Handle = LevelDBInterop.leveldb_options_create();
         }
 

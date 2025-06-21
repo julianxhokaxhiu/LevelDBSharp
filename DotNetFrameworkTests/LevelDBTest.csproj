@@ -2,13 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <PreBuildEvent>mkdir "$(TargetDir)x64"
-copy "$(SolutionDir)runtimes\win-x64\native\leveldb.dll" "$(TargetDir)x64\leveldb.dll
-
-mkdir "$(TargetDir)x86"
-copy "$(SolutionDir)runtimes\win-x86\native\leveldb.dll" "$(TargetDir)x86\leveldb.dll</PreBuildEvent>
-    <AssemblyTitle>DotNetFrameworkTests</AssemblyTitle>
-    <Product>DotNetFrameworkTests</Product>
+    <AssemblyTitle>LevelDBTest</AssemblyTitle>
+    <Product>LevelDBTest</Product>
     <Copyright>Copyright ©  2025</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>

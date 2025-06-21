@@ -51,6 +51,8 @@ namespace LevelDB
         /// </summary>
         public DB(Options options, string name, Encoding encoding)
         {
+            LevelDbLoader.EnsureLoaded();
+
             IntPtr error;
             this._Cache = options.Cache;
             this._InfoLog = options.InfoLog;
