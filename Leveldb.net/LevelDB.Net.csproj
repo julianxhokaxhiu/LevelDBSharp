@@ -6,9 +6,7 @@
     <DelaySign>false</DelaySign>
     <PackageId>LevelDB.Net</PackageId>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>9.0.0</Version>
-    <AssemblyVersion>9.0.0.0</AssemblyVersion>
-    <FileVersion>9.0.0.0</FileVersion>
+    <Version>8.0.0</Version>
     <Authors>oodrive; julianxhokaxhiu</Authors>
     <Company>julianxhokaxhiu</Company>
     <Description>Cross-platform LevelDB binding for .NET Standard and .NET 8+</Description>
@@ -24,12 +22,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="runtimes\**\*" Pack="true">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\license.txt" Pack="true" PackagePath="" />
     <None Include="..\README.md" Pack="true" PackagePath="" />
+    <None Include="runtimes\**\*.*" Pack="true" PackagePath="runtimes\" />
+    <Content Include="LevelDB.Net.targets" Pack="true" PackagePath="build\net8.0\" />
   </ItemGroup>
 </Project>

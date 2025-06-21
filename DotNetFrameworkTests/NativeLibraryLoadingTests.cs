@@ -11,12 +11,12 @@ namespace DotNetFrameworkTests
             {
                 using (new DB(new Options { CreateIfMissing = true }, "LoadingTest"))
                 {
-                    Console.WriteLine("Successfully loaded LevelDB.NET!");
+                    Console.WriteLine("Successfully loaded LevelDB.Net!");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Cannot load LevelDB.NET: " + ex.Message);
+                Console.WriteLine("Cannot load LevelDB.Net: " + ex.Message);
             }
         }
     }

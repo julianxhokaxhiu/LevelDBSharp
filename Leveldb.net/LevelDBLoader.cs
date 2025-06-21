@@ -34,7 +34,7 @@ namespace LevelDB
             string rid = GetRuntimeIdentifier();
             string basePath = AppContext.BaseDirectory;
 
-            string fullPath = Path.Combine(basePath, "runtimes", rid, libFileName);
+            string fullPath = Path.Combine(basePath, "runtimes", rid, "native", libFileName);
 
             if (!File.Exists(fullPath))
                 throw new DllNotFoundException($"Cannot find native library: {fullPath}");
@@ -61,9 +61,9 @@ namespace LevelDB
                 _ => throw new NotSupportedException("Unsupported architecture")
             };
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) return $"{arch}-windows";
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) return $"{arch}-linux";
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) return $"{arch}-osx";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) return $"win-{arch}";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) return $"linux-{arch}";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) return $"osx-{arch}";
 
             throw new PlatformNotSupportedException("Unsupported OS");
         }

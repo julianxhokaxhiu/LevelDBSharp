@@ -18,6 +18,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Leveldb.net\LevelDB.NET.csproj" />
+    <ProjectReference Include="..\Leveldb.net\LevelDB.Net.csproj" />
   </ItemGroup>
 </Project>

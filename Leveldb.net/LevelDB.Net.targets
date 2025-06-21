@@ -1,0 +1,80 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <!-- Base path relative to this .targets file -->
+    <NativeBasePath>$(MSBuildThisFileDirectory)..\..\runtimes</NativeBasePath>
+  </PropertyGroup>
+
+  <!-- Windows x86 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x86'">
+    <Content Include="$(NativeBasePath)\win-x86\native\leveldb.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>leveldb.dll</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+  <!-- Windows x64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+    <Content Include="$(NativeBasePath)\win-x64\native\leveldb.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>leveldb.dll</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+   <!-- Windows arm64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-arm64'">
+    <Content Include="$(NativeBasePath)\win-arm64\native\leveldb.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>leveldb.dll</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+  <!-- Linux x64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+    <Content Include="$(NativeBasePath)\linux-x64\native\libleveldb.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>libleveldb.so</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+  <!-- Linux arm64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-arm64'">
+    <Content Include="$(NativeBasePath)\linux-arm64\native\libleveldb.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>libleveldb.so</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+  <!-- Linux arm64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-arm'">
+    <Content Include="$(NativeBasePath)\linux-arm\native\libleveldb.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>libleveldb.so</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+  <!-- macOS x64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'osx-x64'">
+    <Content Include="$(NativeBasePath)\osx-x64\native\libleveldb.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>libleveldb.dylib</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+  <!-- macOS arm64 -->
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'osx-arm64'">
+    <Content Include="$(NativeBasePath)\osx-arm64\native\libleveldb.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>libleveldb.dylib</Link>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>
