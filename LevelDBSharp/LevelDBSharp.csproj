@@ -4,15 +4,14 @@
     <Configurations>Debug;Release</Configurations>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
-    <PackageId>LevelDB.Net</PackageId>
+    <PackageId>LevelDBSharp</PackageId>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>8.0.0</Version>
+    <Version>0.0.0</Version>
     <Authors>oodrive; julianxhokaxhiu</Authors>
-    <Company>julianxhokaxhiu</Company>
-    <Description>Cross-platform LevelDB binding for .NET Standard and .NET 8+</Description>
+    <Description>Cross-platform LevelDB binding for .NET 8+</Description>
     <PackageTags>leveldb native interop netstandard net8</PackageTags>
-    <PackageProjectUrl>https://github.com/julianxhokaxhiu/leveldb.net</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/julianxhokaxhiu/leveldb.net</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/julianxhokaxhiu/LevelDBSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/julianxhokaxhiu/LevelDBSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <IncludePackageReadmeFile>true</IncludePackageReadmeFile>
@@ -25,6 +24,6 @@
     <None Include="..\license.txt" Pack="true" PackagePath="" />
     <None Include="..\README.md" Pack="true" PackagePath="" />
     <None Include="runtimes\**\*.*" Pack="true" PackagePath="runtimes\" />
-    <Content Include="LevelDB.Net.targets" Pack="true" PackagePath="build\net8.0\" />
+    <Content Include="LevelDBSharp.targets" Pack="true" PackagePath="build\net8.0\" />
   </ItemGroup>
 </Project>

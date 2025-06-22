@@ -1,26 +1,21 @@
-# leveldb for Windows and .NET #
+# LevelDBSharp
+
+Cross-platform LevelDB binding for .NET 8+
+
+<sup>This is a continuation of [oodrive](https://github.com/oodrive)'s [LevelDB.NET](https://github.com/oodrive/leveldb.net).</sup>
 
 ----------
 
 [leveldb](http://code.google.com/p/leveldb/) is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.
 
-This project aims to provide .NET bindings to LevelDB in addition to making leveldb work well on Windows.
-
-# Building leveldb #
-
-See file "WINDOWS" for instructions on how to build this in Windows.
-
-- You'll need to install some [Boost libraries](www.boost.org) to build against
-- You'll need to create a Microsoft Visual C++ project to build this
-- The [WINDOWS file](https://github.com/Reactive-Extensions/LevelDB/blob/master/leveldbNative/WINDOWS) explains both of these processes.
-
-We're looking for volunteers to build a true Win32 port of LevelDB for Windows.
+This project aims to provide .NET 8+ bindings to LevelDB for Windows, Linux and macOS. Native LevelDB Runtime binaries are provided from https://github.com/julianxhokaxhiu/leveldbCI.
 
 # Installation #
-LevelDB.Standard is available as a NuGet package:
+
+LevelDBSharp is available as a NuGet package:
 
 ```
-PM> Install-Package LevelDB.Standard
+PM> Install-Package LevelDBSharp
 ```
 
 # Getting Started #
@@ -121,7 +116,7 @@ using (var db = new DB(options, path))
 		var keyValue = db.Get("New York");
 		batch.Put("Tampa", keyValue);
 		batch.Delete("New York");
-		
+
 		// Write the batch
 		var writeOptions = new WriteOptions { Sync = true; }
 		db.Write(batch, writeOptions);
@@ -252,11 +247,6 @@ private int LexicographicalCompare<T>(IEnumerable<T> xs, IEnumerable<T> ys)
 }
 ```
 
-# LICENSE #
+# License
 
-----------
-
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+See [license.txt](license.txt).
