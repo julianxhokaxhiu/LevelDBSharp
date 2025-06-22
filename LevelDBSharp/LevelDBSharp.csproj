@@ -17,7 +17,8 @@
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <IncludePackageReadmeFile>true</IncludePackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	<IncludeSymbols>true</IncludeSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
   <ItemGroup>
