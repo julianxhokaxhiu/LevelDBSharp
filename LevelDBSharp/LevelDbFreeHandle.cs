@@ -18,7 +18,6 @@ namespace LevelDB
         {
         }
 
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
         override protected bool ReleaseHandle()
         {
             if (this.handle != default(IntPtr))
